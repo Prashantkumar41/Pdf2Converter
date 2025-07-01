@@ -84,7 +84,9 @@ const ToolCard = ({ title, description, icon, route }) => {
       <div>
         <div className="flex items-center gap-3 mb-4">
           <img src={fromIcon} alt={fromFormat} className="w-10 h-10" />
-          <span className="text-xl">➤</span>
+          {/* <span className="text-xl">➤</span> */}
+          <span className="text-2xl font-semibold text-gray-500">&gt;</span>
+
           <img src={toIcon} alt={toFormat} className="w-10 h-10" />
         </div>
         <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
