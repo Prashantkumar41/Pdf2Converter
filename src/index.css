@@ -1,0 +1,13 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Inter globally */
+body {
+  @apply font-sans;
+}
