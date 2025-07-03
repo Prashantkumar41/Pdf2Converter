@@ -2,7 +2,7 @@
 export const pdfTools = [
   {
     title: "PDF TO CSV",
-    description: "Convert PDF to CSV for easy data analysis. lorem asldjfalsjflsdfsfjklsadjfjsalkdfjsaldfjlsafdjlsadfjlsafdjkfsdlkfjsadkfjsafddsjlkasfjlsa;fjls;f;asfla;sfjsfjweorweisjfdsofdojsjsdflsjflsfjl",
+    description: "Convert PDF to CSV for easy data analysis.",
     icon: "/assets/icons/csv-icon.png",
     route: "/pdf-to-csv",
   },
@@ -127,3 +127,72 @@ export const pdfTools = [
     route: "/xml-to-pdf",
   },
 ];
+
+
+
+
+// --------------------------------------------
+
+
+export const toolCategories = [
+  {
+    category: "ORGANIZE PDF",
+    tools: [
+      { title: "Merge PDF", icon: "🔗", route: "/merge-pdf" },
+      { title: "Split PDF", icon: "✂️", route: "/split-pdf" },
+      { title: "Remove pages", icon: "❌", route: "/remove-pages" },
+      { title: "Extract pages", icon: "📄", route: "/extract-pages" },
+      { title: "Organize PDF", icon: "🗂️", route: "/organize-pdf" },
+      { title: "Scan to PDF", icon: "📷", route: "/scan-to-pdf" },
+    ],
+  },
+  {
+    category: "OPTIMIZE PDF",
+    tools: [
+      { title: "Compress PDF", icon: "🗜️", route: "/compress-pdf" },
+      { title: "Repair PDF", icon: "🛠️", route: "/repair-pdf" },
+      { title: "OCR PDF", icon: "🔍", route: "/ocr-pdf" },
+    ],
+  },
+  {
+    category: "CONVERT TO PDF",
+    tools: [
+      { title: "JPG to PDF", icon: "🖼️", route: "/jpg-to-pdf" },
+      { title: "WORD to PDF", icon: "📄", route: "/word-to-pdf" },
+      { title: "POWERPOINT to PDF", icon: "📊", route: "/ppt-to-pdf" },
+      { title: "EXCEL to PDF", icon: "📈", route: "/excel-to-pdf" },
+      { title: "HTML to PDF", icon: "🌐", route: "/html-to-pdf" },
+    ],
+  },
+  {
+    category: "CONVERT FROM PDF",
+    tools: [
+      { title: "PDF to JPG", icon: "🖼️", route: "/pdf-to-jpg" },
+      { title: "PDF to WORD", icon: "📄", route: "/pdf-to-word" },
+      { title: "PDF to POWERPOINT", icon: "📊", route: "/pdf-to-ppt" },
+      { title: "PDF to EXCEL", icon: "📈", route: "/pdf-to-excel" },
+      { title: "PDF to PDF/A", icon: "🗂️", route: "/pdf-to-pdfa" },
+    ],
+  },
+  {
+    category: "EDIT PDF",
+    tools: [
+      { title: "Rotate PDF", icon: "🔁", route: "/rotate-pdf" },
+      { title: "Add page numbers", icon: "🔢", route: "/add-page-numbers" },
+      { title: "Add watermark", icon: "💧", route: "/add-watermark" },
+      { title: "Crop PDF", icon: "✂️", route: "/crop-pdf" },
+      { title: "Edit PDF", icon: "📝", route: "/edit-pdf" },
+    ],
+  },
+  {
+    category: "PDF SECURITY",
+    tools: [
+      { title: "Unlock PDF", icon: "🔓", route: "/unlock-pdf" },
+      { title: "Protect PDF", icon: "🔒", route: "/protect-pdf" },
+      { title: "Sign PDF", icon: "✍️", route: "/sign-pdf" },
+      { title: "Redact PDF", icon: "🛑", route: "/redact-pdf" },
+      { title: "Compare PDF", icon: "📑", route: "/compare-pdf" },
+    ],
+  },
+];
+

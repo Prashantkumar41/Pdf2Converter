@@ -1,10 +1,9 @@
 
 
+// ------------------------------------------------card design----------------
 
-
-// // src/components/common/ToolCard.jsx
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
+// "use client"
+// import { useNavigate } from "react-router-dom"
 
 // const formatToIcon = {
 //   PDF: "/assets/icons/pdf-icon.png",
@@ -20,38 +19,42 @@
 //   TEXT: "/assets/icons/text-icon.png",
 //   CSV: "/assets/icons/csv-icon.png",
 //   SPEECH: "/assets/icons/voice-icon.png",
-// };
+// }
 
 // const ToolCard = ({ title, description, icon, route }) => {
-//   const navigate = useNavigate();
+//   const navigate = useNavigate()
 
-//   const [fromFormat, , toFormat] = title.split(" ");
-//   const fromIcon = formatToIcon[fromFormat] || "/assets/icons/pdf-icon.png";
-//   const toIcon = formatToIcon[toFormat] || icon;
+//   // Extract format for icon (if using format-based titles)
+//   const [fromFormat, , toFormat] = title.split(" ")
+//   const cardIcon = formatToIcon[fromFormat] || icon
 
 //   return (
 //     <div
 //       onClick={() => navigate(route)}
-//       className="bg-white cursor-pointer rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300 w-full min-h-[230px]"
+//       className="group bg-white cursor-pointer rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 hover:shadow-lg p-6 h-full flex flex-col"
 //     >
-//       <div className="flex items-center gap-3 mb-4">
-//         <img src={fromIcon} alt={fromFormat} className="w-10 h-10" />
-//         <span className="text-xl">➤</span>
-//         <img src={toIcon} alt={toFormat} className="w-10 h-10" />
+//       {/* Icon Section */}
+//       <div className="flex justify-center mb-4">
+//         <div className="w-16 h-16 flex items-center justify-center">
+//           <img src={cardIcon || "/placeholder.svg"} alt={fromFormat || title} className="w-12 h-12 object-contain" />
+//         </div>
 //       </div>
-//       <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
-//       <p className="text-xs text-gray-700 leading-snug">{description}</p>
+
+//       {/* Content Section */}
+//       <div className="flex-1 text-center">
+//         <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">{title}</h3>
+//         <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{description}</p>
+//       </div>
 //     </div>
-//   );
-// };
+//   )
+// }
 
-// export default ToolCard;
+// export default ToolCard
 
 
+// ---------------------------------------------------------------
 
-// src/components/common/ToolCard.jsx
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const formatToIcon = {
   PDF: "/assets/icons/pdf-icon.png",
@@ -67,37 +70,36 @@ const formatToIcon = {
   TEXT: "/assets/icons/text-icon.png",
   CSV: "/assets/icons/csv-icon.png",
   SPEECH: "/assets/icons/voice-icon.png",
-};
+}
 
 const ToolCard = ({ title, description, icon, route }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [fromFormat, , toFormat] = title.split(" ");
-  const fromIcon = formatToIcon[fromFormat] || "/assets/icons/pdf-icon.png";
-  const toIcon = formatToIcon[toFormat] || icon;
+  const [fromFormat, , toFormat] = title.split(" ")
+  const fromIcon = formatToIcon[fromFormat] || "/assets/icons/pdf-icon.png"
+  const toIcon = formatToIcon[toFormat] || icon
 
   return (
     <div
       onClick={() => navigate(route)}
-      className="bg-white cursor-pointer rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300 w-full min-h-[230px] h-full flex flex-col justify-between"
+      className="group bg-white cursor-pointer rounded-lg border border-gray-200 hover:border-gray-300 transition-all duration-200 hover:shadow-lg p-6 h-full flex flex-col"
     >
-      <div>
-        <div className="flex items-center gap-3 mb-4">
-          <img src={fromIcon} alt={fromFormat} className="w-10 h-10" />
-          {/* <span className="text-xl">➤</span> */}
-          <span className="text-2xl font-semibold text-gray-500">&gt;</span>
+      {/* Icon Section with From ➝ To Icons */}
+      <div className="flex justify-center mb-4 gap-2 items-center">
+        <img src={fromIcon} alt={fromFormat} className="w-10 h-10 object-contain" />
+        <span className="text-xl text-gray-500 font-semibold">&gt;</span>
+        <img src={toIcon} alt={toFormat || title} className="w-10 h-10 object-contain" />
+      </div>
 
-          <img src={toIcon} alt={toFormat} className="w-10 h-10" />
-        </div>
-        <h3 className="text-lg font-bold text-black mb-2">{title}</h3>
-        <p className="text-xs text-gray-700 leading-snug line-clamp-3">
-          {description}
-        </p>
+      {/* Content Section */}
+      <div className="flex-1 text-center">
+        <h3 className="text-lg font-semibold text-gray-900 mb-3 leading-tight">{title}</h3>
+        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{description}</p>
       </div>
     </div>
-  );
+  )
+}
+
+export default ToolCard
 
 
-};
-
-export default ToolCard;
